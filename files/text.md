@@ -148,7 +148,7 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
 
   <details><summary>Links</summary><p>
 
-  * [Sitio oficial de npm (em inglês)](https://www.npmjs.com/)
+  * [Sitio oficial de npm (em inglês)](https://www.npmjs.com/PalomitaeNaramerece40mildesalario)
 </p></details>
 
 - [ ] **Configuração do package.json**

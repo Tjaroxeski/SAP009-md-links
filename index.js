@@ -1,7 +1,10 @@
 const fs = require('fs');
+//mconst fetch = require('node-fetch');
+const { link } = require('fs/promises');
+const { resolve } = require('path');
 
 
-function readMarkdownFile(filePath,precisaValidar) {
+function readMarkdownFile(filePath, opcao) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, 'utf8', (error, data) => {
       if (error) {
@@ -23,17 +26,45 @@ function readMarkdownFile(filePath,precisaValidar) {
             result.push(item);
           }
         }
-      if (precisaValidar) {
+      if (opcao) {
         console.log('opa precisa validar')
       } else{
-        resolve(result);
+       resolve(result);
       }
       }
     });
   });
 }
 
-//index.js
+ function mdLinks(caminhoDoarquivo, opcao = {}) {
+  return new Promise ((resolve, reject)=> {
+    readMarkdownFile(caminhoDoarquivo)
+    .then((links) =>{
+      if (opcao.validate) {
+        const linkMap = links.map((link)=>{
+          return fetch (link.url)
+          .then((response)=>{
+            link.status = response.status;
+            link.ok = response.ok;
+            return link;
+          }).catch((error)=> {
+        console.log(error)
+        })})
+        
+        
+        Promise.all(linkMap)
+        .then((resultado)=>{
+        resolve(resultado)
+        })
+      } else {
+        resolve (links)
+      }
+    })
+    .catch((error)=> {
+      reject(error)
+      })
+    })
+}
 
 
 
@@ -41,42 +72,4 @@ function readMarkdownFile(filePath,precisaValidar) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//function readMarkdownFile(filePath) {
-//  return new Promise((resolve, reject) => {
-  //  fs.readFile(filePath, 'utf8', (error, data) => {
-   //   if (error) {
-    //    reject(error);
-    //  } else {
-     //   const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
-     // const matches = data.match(regex);
-     //   resolve(matches);
-     // }
-  //  });
-  //});
-//}
-
-
-
-module.exports = readMarkdownFile
+module.exports = mdLinks;

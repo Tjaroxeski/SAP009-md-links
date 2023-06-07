@@ -1,1 +1,0 @@
-function mdValidate(filePath)
