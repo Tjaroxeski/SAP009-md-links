@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const mdLinks = require("./index.js")
+const {mdLinks} = require("./index.js")
 const caminhoDoarquivo = process.argv[2]
 const opcao = {
     validate: process.argv.includes('--validate'),
