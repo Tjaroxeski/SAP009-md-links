@@ -38,5 +38,5 @@ Os testes unitários tiveram cobertura acima de 70% dos statements, functions, l
 
 A ferramente foi desenvolvida utilizando o modelo de módulos do CommonJs, devido ao ambiente Node.js e para fins de conhecimento.
 
-5. Instruçoes para utilização
+ Instruçoes para utilização
   npm i tharla-md-links.
