@@ -1,5 +1,5 @@
 const fs = require('fs');
-//mconst fetch = require('node-fetch');
+const fetch = require('node-fetch');
 const { link } = require('fs/promises');
 const { resolve } = require('path');
 

@@ -1,5 +1,5 @@
 {
-  "name": "md-links",
+  "name": "tharla-md-links",
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
@@ -16,12 +16,12 @@
   },
   "type": "commonjs",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "author": "Tharla",
   "license": "MIT",
-  "bin":{
-    "mdLinks":"cli.js"
+  "bin": {
+    "mdLinks": "cli.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",
@@ -31,6 +31,6 @@
     "jest": "^29.5.0"
   },
   "dependencies": {
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^2.6.11"
   }
 }
