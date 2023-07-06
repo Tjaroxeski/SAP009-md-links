@@ -1,8 +1,5 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
-const { link } = require('fs/promises');
-const { resolve } = require('path');
-
 
 function readMarkdownFile(filePath) {
   return new Promise((resolve, reject) => {
