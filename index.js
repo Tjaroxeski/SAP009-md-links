@@ -28,7 +28,7 @@ function readMarkdownFile(filePath) {
         }
        resolve(result);
       }
-    });
+    }); 
   });
 }
 
